@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedHack | Professional Pentest Toolbar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>RED<span>HACK</span></h1>
+            <p>Professional Web Application Security Toolbar</p>
+        </header>
+
+        <div class="main-content">
+            <div class="url-section">
+                <div class="url-controls">
+                    <input type="text" id="target-url" placeholder="https://example.com/path?param=value">
+                    <div class="url-buttons">
+                        <button id="encode-url">URL Encode</button>
+                        <button id="decode-url">URL Decode</button>
+                        <button id="add-param">Add Param</button>
+                        <button id="send-request">Send</button>
+                    </div>
+                </div>
+                <div class="url-result">
+                    <iframe id="result-frame" sandbox="allow-same-origin allow-scripts"></iframe>
+                </div>
+            </div>
+
+            <div class="tools-section">
+                <div class="subdomain-enum">
+                    <h3>Subdomain Enumeration</h3>
+                    <div class="subdomain-controls">
+                        <input type="text" id="domain-input" placeholder="example.com">
+                        <button id="scan-subdomains">Scan</button>
+                    </div>
+                    <div class="subdomain-results" id="subdomain-results">
+                        <!-- Results will appear here -->
+                    </div>
+                </div>
+
+                <div class="request-interceptor">
+                    <h3>Request Interceptor</h3>
+                    <div class="request-controls">
+                        <select id="request-method">
+                            <option>GET</option>
+                            <option>POST</option>
+                            <option>PUT</option>
+                            <option>DELETE</option>
+                        </select>
+                        <button id="send-request">Send</button>
+                    </div>
+                    <textarea id="request-headers" placeholder="Request Headers"></textarea>
+                    <textarea id="request-body" placeholder="Request Body"></textarea>
+                </div>
+            </div>
+
+            <div class="payload-section">
+                <h3>Payload Generator</h3>
+                <div class="payload-tabs">
+                    <button class="payload-tab active" data-tab="xss">XSS</button>
+                    <button class="payload-tab" data-tab="sqli">SQLi</button>
+                    <button class="payload-tab" data-tab="lfi">LFI</button>
+                    <button class="payload-tab" data-tab="rce">RCE</button>
+                </div>
+                <div class="payload-content active" id="xss-payloads">
+                    <!-- XSS payloads will be loaded here -->
+                </div>
+                <div class="payload-content" id="sqli-payloads">
+                    <!-- SQLi payloads will be loaded here -->
+                </div>
+                <div class="payload-content" id="lfi-payloads">
+                    <!-- LFI payloads will be loaded here -->
+                </div>
+                <div class="payload-content" id="rce-payloads">
+                    <!-- RCE payloads will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
